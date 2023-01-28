@@ -120,6 +120,13 @@ class projectile():
         t2, x2, y2, vx2, vy2, ax2, ay2 = self.__calculateWithoutAir()
         t3, x3, y3, vx3, vy3, ax3, ay3 = self.__actual()
         
+        v1 = numpy.hypot(vx1, vy1)
+        v2 = numpy.hypot(vx2, vy2)
+        v3 = numpy.hypot(vx3, vy3)
+        a1 = numpy.hypot(ax1, ay1)
+        a2 = numpy.hypot(ax2, ay2)
+        a3 = numpy.hypot(ax3, ay3)
+        
         data = [None] * 6
         data[0] = locals().get(f"{x}1")
         data[2] = locals().get(f"{x}2")
